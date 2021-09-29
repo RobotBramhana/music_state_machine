@@ -1,0 +1,7 @@
+@startuml SequenceDiagram
+
+StateMachine -> MusicServer : Play music request
+MusicServer -> StateMachine : Music played acknowledgement
+
+@enduml
+
