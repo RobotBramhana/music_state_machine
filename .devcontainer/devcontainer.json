@@ -1,0 +1,74 @@
+{
+	"name": "ROS devcontainer for vscode",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	// The below statement is an alternate to building from Dockerfile
+	// "image": "ros:melodic"
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {"terminal.integrated.shell.linux": "/bin/bash"},
+
+	// Add the IDs of extensions you want installed when the container is created.,
+	"extensions": ["austin.code-gnu-global",
+		"bbenoist.Doxygen",
+		"betwo.vscode-doxygen-runner",
+		"cheshirekow.cmake-format",
+		"cschlosser.doxdocgen",
+		"donjayamanne.githistory",
+		"dunstontc.vscode-docker-syntax",
+		"eamodio.gitlens",
+		"george3447.docker-run",
+		"GitHub.vscode-pull-request-github",
+		"go2sh.cmake-integration-vscode",
+		"gocarlos.cmake-tools",
+		"Gruntfuggly.todo-tree",
+		"hakua.doxygen-previewer",
+		"hars.CppSnippets",
+		"henriiik.docker-linter",
+		"jbenden.c-cpp-flylint",
+		"jeff-hykin.better-cpp-syntax",
+		"KnisterPeter.vscode-github",
+		"mads-hartmann.bash-ide-vscode",
+		"mhutchie.git-graph",
+		"mikeburgh.xml-format",
+		"ms-azuretools.vscode-docker",
+		"ms-iot.vscode-ros",
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-vscode-remote.remote-containers",
+		"ms-vscode-remote.remote-ssh",
+		"ms-vscode-remote.remote-ssh-edit",
+		"ms-vscode-remote.remote-wsl",
+		"ms-vscode.cpptools",
+		"ms-vscode.cpptools-extension-pack",
+		"ms-vscode.cpptools-themes",
+		"p1c2u.docker-compose",
+		"pijar.ros-snippets",
+		"purocean.drawio-preview",
+		"rogalmic.bash-debug",
+		"shakram02.bash-beautify",
+		"Tacha-S.roslint",
+		"vsciot-vscode.vscode-arduino",
+		"vsls-contrib.gistfs",
+		"wujipeng.cpp-comment-generator",
+		"xaver.clang-format",
+		"zoneorz.ros-package-variabl"],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "",
+	
+	// The ones that did not work 
+	// "remoteEnv": {
+	// 	"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+	// },
+	// "workspaceMount": "source=${localWorkspaceFolder}, target=/workspace/src, type=volume, consistency=delegated",
+	
+	// The one that worked.
+	// Advantage : container launch won’t fail if the local path doesn’t already exist.
+	"runArgs": [
+    "-v", "${localWorkspaceFolder}:/workspace/src"
+  ],
+	"workspaceFolder": "/workspace"
+
+}
