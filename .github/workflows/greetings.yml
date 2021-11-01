@@ -4,5 +4,4 @@ jobs:
   Greet:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Since this is a hardware project, it requires a self hosted 
-    CI/CD pipeline connected with required hardware"
+    - run: echo "Since this is a hardware project, it requires a self hosted CI/CD pipeline connected with required hardware"
