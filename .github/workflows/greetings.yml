@@ -1,16 +1,8 @@
 name: Greetings
-
-on: [pull_request, issues]
-
+on: [push]
 jobs:
-  greeting:
+  Greet:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
     steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: 'Message that will be displayed on users first issue'
-        pr-message: 'Message that will be displayed on users first pull request'
+    - run: echo "Since this is a hardware project, it requires a self hosted 
+    CI/CD pipeline connected with required hardware"
