@@ -1,6 +1,7 @@
 @startuml SequenceDiagram
 
 StateMachine -> MusicServer : Play music request
+MusicServer -> StateMachine : Music playing status update
 MusicServer -> StateMachine : Music played acknowledgement
 
 @enduml

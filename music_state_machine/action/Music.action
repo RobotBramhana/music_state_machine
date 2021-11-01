@@ -1,0 +1,6 @@
+music_state_machine/Notes play_request
+---
+bool playing
+---
+#feedback
+bool played
